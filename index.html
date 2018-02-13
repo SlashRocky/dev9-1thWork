@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja" >
+  <head>
+    <meta charset="UTF-8">
+    <title>Rock x Paper x Scissors</title>
+    
+    <!-- favicon -->
+    <link rel="icon" type="image/vnd.microsoft.icon" href="lib/img/rps/favicon.ico" />
+    
+    <!-- css -->
+    <link rel="stylesheet" href="lib/css/style.css">
+    <link rel="stylesheet" href="lib/css/stars.css">
+		<link rel="stylesheet" href="lib/css/rps.css">
+    
+    <!-- jQuery -->
+    <script src="lib/js/jquery.js"></script>
+    
+  </head>
+  <body>
+    <div id='w' class="p-relative">
+     
+      <canvas id="space"></canvas>
+
+        <div id="container" class="p-absolute top0 bot0 right0 left0 w320 h568 m-auto bg-tp">
+
+          <!-- Enemy's Section -->
+          <div id="enemySection p-relative">
+              <p class="p-absolute top8 left8 fs-24 color-f">Enemy</p>
+              <div class="enemyGaugeSection p-absolute top40 right10 w304 h24 m-auto bs-bbox br-4 b-all bg-tp">
+                <div class="enemyGauge h20p w300">&thinsp;</div>
+              </div>
+          </div>
+
+          <!-- Battle Section -->
+          <div id="battleSection p-relative">
+            <div class="p-absolute top72 left8 w300 height320">
+              <div class="enemyRpsCardSection m-auto">
+                <div id="enemeyIcon" class="bs-bbox w96 h96 bg-f0 br-4 b-all p-absolute left104" style="display:none;">
+                  <img id="enemeyIconImg">
+                </div>
+                <div id="rpsShout" class="rpsShout clearfix p-absolute top100 left25 color-f fs-20 d-flex">
+                  <div id="shout01" class="rps mr50" style="display:none;">ジャン</div>
+                  <div id="shout02" class="rps mr50" style="display:none;">ケン</div>
+                  <div id="shout03" class="rps" style="display:none;">ポン！</div>
+                </div>
+                <div id="judgement" class="p-absolute top130 left65 color-f fs-20 ta-center m-auto">
+
+                </div>
+              </div>
+              <div class="p-absolute top190 left83">	
+            	<button id="start" class="btn-push red  c-pointer" type="button">FIGHT!</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Player's Section -->
+          <div id="playerSection p-relative">
+            <p class="p-absolute bot142 left8 fs-24 color-f">Player</p>
+            <div class="playerGaugeSection p-absolute bot112 right10 w304 h24 m-auto bs-bbox br-4 b-all bg-tp">
+                <div class="playerGauge h20p w300">&thinsp;</div>
+            </div>
+            <div class="playerRpsCardSection d-flex w304 m-auto p-absolute bot8 left8">
+              <button id="iconG" class="icon g bs-bbox w96 h96 mr8 bg-3 br-4 b-all" type="button"><img src="lib/img/rps/g.png" alt="rock"></button>
+              <button id="iconC" class="icon c bs-bbox w96 h96 mr8 bg-3 br-4 b-all" type="button"><img src="lib/img/rps/c.png" alt="scissors"></button>
+              <button id="iconP" class="icon p bs-bbox w96 h96 bg-3 br-4 b-all" type="button"><img src="lib/img/rps/p.png" alt="paper"></button>
+            </div>
+          </div>
+          	
+        </div>
+
+		<a href="#" id="warp" style="display:none;">WARP SPEED</a>
+    </div>
+     
+    <!-- js -->
+    <script src="lib/js/stars.js"></script>
+    <script src="lib/js/rps.js"></script>
+		
+  </body>
+</html>

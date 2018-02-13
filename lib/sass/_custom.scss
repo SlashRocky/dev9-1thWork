@@ -1,0 +1,258 @@
+@import "compass";
+
+/* ----------------------------------------
+kv
+---------------------------------------- */
+.main-ttl{
+  width:100%;
+  max-width: 100%;
+  height: auto;
+  background-image: url(../img/mainbg.png);
+  background-size: cover;
+}
+
+/* ----------------------------------------
+course
+---------------------------------------- */
+.contents-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.contents-wrap:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.contents-text {
+  width: 50%; 
+  display: flex;
+  align-items: center;
+}
+.contents-img {
+  width: 50%;
+}
+.contents-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 768px){
+  .contents-wrap,
+  .contents-wrap:nth-child(even) {
+    flex-direction: column;
+  }
+  .contents-text,
+  .contents-img {
+    width: 100%;
+  }
+  .contents-text {
+    padding: 3rem;
+  }
+  .contents-text h3 {
+    text-align: center;
+  }
+}
+
+/* ----------------------------------------
+news
+---------------------------------------- */
+.grid figure {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 10px 1%;
+  min-width: 300px;
+  max-width: 480px;
+  max-height: 360px;
+  width: 48%;
+  background: #ff6464;
+  text-align: center;
+  cursor: pointer;
+}
+.grid figure img {
+  position: relative;
+  display: block;
+  min-height: 100%;
+  max-width: 100%;
+  opacity: 0.8;
+}
+figure.effect-ruby {
+  background-color: #ff6464;
+}
+figure.effect-ruby img {
+  opacity: 0.7;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: scale(1.15);
+  transform: scale(1.15);
+}
+figure.effect-ruby:hover img {
+  opacity: 0.5;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+/* ----------------------------------------
+button
+---------------------------------------- */
+.button {
+  position: relative;
+  z-index: 2;
+  background-color: #ffd61a;
+  border: 2px solid #ffd61a;
+}
+.button:hover {
+  background-color: #fff !important;
+  border-color: #a78900;
+  color: #a78900 !important;
+}
+.button::before,
+.button::after {
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #ffd61a;
+}
+.button::before {
+  top: 0;
+}
+.button::after {
+  bottom: 0;
+}
+.button:hover::before,
+.button:hover::after {
+  height: 0;
+  background-color: #a78900;
+}
+.button,
+.button::before,
+.button::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+/* ----------------------------------------
+selectbox
+---------------------------------------- */
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  height: 30px;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+  padding: 0 40px 0 10px;
+  border: 1px solid #ccc;
+}
+select::-ms-expand {
+  display: none;
+}
+.selectWrap{
+  position: relative;
+  display: inline-block;
+}
+.selectWrap::before{
+  content: '';
+  position: absolute;
+  z-index: 0;
+  top: 9px;
+  right: 0;
+  background: #ccc;
+  height: 65%;
+  width: 30px;
+}
+.selectWrap::after{
+  content: '';
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  right: 9px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 6px 0 6px;
+  border-color: #fff transparent transparent transparent; 
+}
+
+/* ----------------------------------------
+checkbox
+---------------------------------------- */
+input[type="checkbox"] {
+  display: none;
+}
+label {
+  position: relative;
+  display: inline-block;
+  padding: 3px 3px 3px 22px;
+  cursor: pointer;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+label::before,
+label::after {
+  position: absolute;
+  content: '';
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+label::before {
+  top: 50%;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  margin-top: -8px;
+  background: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+label::after {
+  opacity: 0;
+  top: 50%;
+  left: 3px;
+  width: 8px;
+  height: 4px;
+  margin-top: -4px;
+  border-left: 2px solid #3498db;
+  border-bottom: 2px solid #3498db;
+  -webkit-transform: rotate(-45deg) scale(.5);
+  transform: rotate(-45deg) scale(.5);
+}
+label:hover::before {
+  background: #fff;
+}
+input[type="checkbox"]:checked + label::before {
+  background: #fff;
+  border: 1px solid #3498db;
+}
+input[type="checkbox"]:checked + label::after {
+  opacity: 1;
+  -webkit-transform: rotate(-45deg) scale(1);
+  transform: rotate(-45deg) scale(1);
+}
+
+/* ----------------------------------------
+pageTop
+---------------------------------------- */
+.page-top{
+  display: block;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 60px;
+  height: 60px;
+  color: #B60024;
+  background-color: #fff;
+  border-radius: 100px;
+  box-shadow: 0px 2px 6px 0px #aaa;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 4.0;
+  z-index: 2;
+}
